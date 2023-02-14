@@ -1,0 +1,187 @@
+<!-- Referenced: https://www.w3schools.com/html/html_responsive.asp-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/css/styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+ integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" 
+integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" 
+crossorigin="anonymous"></script>
+
+<script src="index.js"></script>
+<style>
+  
+  /* Default styles */
+body {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Media query styles */
+@media only screen and (max-width: 767px) {
+    body {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+  .box {
+  width: 100%;
+  max-width: 1500px;
+  height: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  
+  background-color: lightgray;
+  align-self: center;
+  flex: 1;
+}
+.app-heading {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 0px;
+}
+.title{
+  font-size: large;
+  font-weight: 700;
+}
+.custom-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 30%;
+  width: 300px;
+}
+
+.custom-button:hover {
+  background-color: #3e8e41;
+}
+.columns {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+}
+#logo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  float: left;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+  </style>
+  
+
+
+</head>
+
+<!-- you can also specify styles straight in html! Let's use Verdana on this page.-->
+<body>
+  <div class="box" id="start">
+    
+    <img id="logo" src="https://cdni.iconscout.com/illustration/premium/thumb/travel-3100471-2582992.png" alt="My logo">
+      <header class="app-heading"> Personal Transportation Conversion App</header>
+      
+    
+
+      <div id="calculateDistance">
+        <form id="myForm"> 
+          <div class="form-group row " style="margin-left: 17%;">
+            <label for="distance" class="col-sm-2 col-form-label">Distance</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="distance" style="width: 200px;" placeholder="Enter Distance" required>
+              <div id="error" style="color: red; font-size: large;"></div>
+            </div>
+            
+        </div>
+      
+        <div style="align-items: center; margin-left: 17%; margin-top: 20px;">
+          <div class="form-group" style="flex: auto;">
+            <label style="font-size: 20px; font-weight: 800;">Select your preferred transport:</label>
+            
+            <div class="form-group d-flex justify-content-start align-items-center">
+              <div class="form-check  mx-3">
+                <input class="form-check-input" style="flex: 1;" type="radio" name="transport" id="transport1" value="Walking" checked>
+                <label class="form-check-label" for="transport1" style="color: red;">Walking</label>
+              </div>
+              <div class="form-check  mx-3">
+                <input class="form-check-input" type="radio" name="transport" id="transport2" value="Boosted Mini S Board">
+                <label class="form-check-label" for="transport2" style="color: red;">Boosted Mini S Board</label>
+              </div>
+              <div class="form-check  mx-3">
+                <input class="form-check-input" type="radio" name="transport" id="transport3" value="Evolve Bamboo GTR 2in1">
+                <label class="form-check-label" for="transport3" style="color: red;">Evolve Bamboo GTR 2in1 </label>
+              </div>
+            </div>
+            
+            <div class="form-group d-flex justify-content-start align-items-center">
+              <div class="form-check m-3">
+                <input class="form-check-input" type="radio" name="transport" id="transport3" value="OneWheel XR">
+                <label class="form-check-label" for="transport3" >OneWheel XR </label>
+              </div>
+              <div class="form-check m-3">
+                <input class="form-check-input" type="radio" name="transport" id="transport3" value="MotoTec Skateboard">
+                <label class="form-check-label" for="transport3">MotoTec Skateboard</label>
+              </div>
+              <div class="form-check m-3">
+                <input class="form-check-input" type="radio" name="transport" id="transport3" value="Segway Ninebot S">
+                <label class="form-check-label" for="transport3">Segway Ninebot S</label>
+              </div>
+            </div>
+            <div class="form-group d-flex justify-content-start align-items-center">
+              <div class="form-check m-3">
+                <input class="form-check-input" type="radio" name="transport" id="transport3" value="Segway Ninebot S-PLUS ">
+                <label class="form-check-label" for="transport3" style="color: red;">Segway Ninebot S-PLUS </label>
+              </div>
+              <div class="form-check m-3">
+                <input class="form-check-input" type="radio" name="transport" id="transport3" value="Razor Scooter ">
+                <label class="form-check-label" for="transport3">Razor Scooter </label>
+              </div>
+              <div class="form-check m-3">
+                <input class="form-check-input" type="radio" name="transport" id="transport3" value="GeoBlade">
+                <label class="form-check-label" for="transport3">GeoBlade</label>
+              </div>
+              <div class="form-check m-3">
+                <input class="form-check-input" type="radio" name="transport" id="transport3" value="Hovertrax Hoverboard">
+                <label class="form-check-label" for="transport3" style="color: rgb(252, 12, 12);">Hovertrax Hoverboard</label>
+              </div>
+            </div>
+            
+          </div>
+        
+        </div>
+        
+          
+      
+       
+        <div  style="display: flex;">
+          <button class="custom-button" onclick=submitData() value="submit">Calculate</button>
+      
+        <div>
+          <a href="distance.html" style="border-radius: 2; margin-left: 30px; font-size: 36px; font-weight: bold;">Calculate Distance if you have time</a>
+        </div>
+      
+          
+          </div>
+        
+        </form>
+      </div>
+  
+  <div id="title1" class="title"></div>
+  <div id="result"></div>
+  <div id="title2" class="title"></div>
+  <div id="result1"></div>
+ 
+</body>
+</html>
